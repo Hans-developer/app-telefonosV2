@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block content%}
+<center><h2>{%block title%}Editar usuario{%endblock%}</h2></center>
+<form class="form-control" action="/editar_usuario/{{user.id}}" method="POST">
+    <input type="text" name="name" value="{{user.name}}" required>
+    <input type="email" name="email" value="{{user.email}}" required>
+    <input type="text" name="password" value="{{user.password}}" required>
+    <button class="btn btn-primary" type="submit">Actualizar</button>
+</form>
+<div class=" text-center p-3">
+    <a class="btn btn-primary" href="{{url_for('v_usuarios')}}"><< Volver >></a>
+</div>
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2025 PhoneExpress. Todos los derechos reservados.</p>
+    </div>
+</footer>
+{%endblock%}

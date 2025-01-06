@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PhoneExpress - Reparación de Teléfonos</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <nav
+            class="bg-dark text-white py-4 navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand"
+                    href="{{url_for('index')}}"><h1>PhoneExpress</h1></a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                                href="{{url_for('v_inicio')}}">Iniciar
+                                sesion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active">Desarrollado por Hans
+                                Saldias</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header id="inicio" class="bg-light py-5">
+            <div class="container text-center">
+                <h1 class="display-4">PhoneExpress - Molina <br>Expertos en
+                    Reparación de Teléfonos</h1>
+                <p class="lead">Reparamos tu dispositivo con rapidez y
+                    profesionalidad</p>
+            </div>
+        </header>
+
+        <section class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Busca tu Repuesto</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form action="/resultado" method="POST">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control"
+                                    placeholder="Ingrese el modelo ..."
+                                    name="buscar">
+                                <button class="btn btn-primary" type="submit"
+                                    id="searchButton">
+                                    <i class="bi bi-search"></i> Buscar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="searchResults" class="row mt-4">
+                    <!-- Los resultados de la búsqueda se mostrarán aquí -->
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios" class="bg-light py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Nuestros Servicios</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i
+                                        class="bi bi-phone"></i> Reparación de
+                                    Pantallas</h5>
+                                <p class="card-text">Reemplazamos pantallas
+                                    rotas o con fallas en tiempo récord.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i
+                                        class="bi bi-battery"></i> Cambio de
+                                    Batería</h5>
+                                <p class="card-text">Restauramos la vida útil de
+                                    tu dispositivo con baterías de alta
+                                    calidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i
+                                        class="bi bi-water"></i> Reparación por
+                                    Humedad</h5>
+                                <p class="card-text">Salvamos tu teléfono de
+                                    daños por humedad con técnicas de alta
+                                    precisión.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i
+                                        class="bi bi-water"></i> Reparación
+                                    Entrada de carga</h5>
+                                <p class="card-text">Cambiamos su entrada de
+                                    carga defectuosa.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i
+                                        class="bi bi-house-door"></i> Reparación
+                                    a domicilio</h5>
+                                <p class="card-text">Reparamos tu dispositivo en
+                                    la comodidad de tu hogar o vamos a buscar y
+                                    a dejar a su casa. <br> Costo extra
+                                    dependiendo el lugar y distancia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <center><a class="btn" target="_blank" href="https://wa.me/+56998048986"><iclass="bi bi-whatsapp"></i></a></center>
+
+            <footer class="bg-dark text-white py-4">
+                <div class="container text-center">
+                    <p>&copy; 2025 PhoneExpress. Todos los derechos
+                        reservados.</p>
+                </div>
+            </footer>
+
+            <script
+                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+    </html>

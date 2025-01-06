@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="container">
+    <center>
+        <h1 class="p-4">{%block title%}Lista de usuarios{%endblock%}</h1>
+        <ul class="container mt-5">
+            {%for u in user%}
+            <li class="me-3">
+                {{u.name}} - {{u.email}}  
+                <a class="m-2 btn btn-success p-1" href="/editar_user/{{u.id}}">Editar</a>
+                <a class="btn btn-danger p-1" href="/eliminar_usuario/{{u.id}}">Eliminar</a>
+            </li>
+            {%endfor%}
+        </ul>
+    </center>
+</div>
+
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2025 PhoneExpress. Todos los derechos reservados.</p>
+    </div>
+</footer>
+{%endblock%}

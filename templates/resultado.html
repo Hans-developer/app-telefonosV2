@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoneExpress - Repuestos de Calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <header class="bg-black text-white shadow-md">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold">PhoneExpress</h1>
+            <p class="text-xl">Reparacion de calidad para tu móvil</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-2xl font-semibold mb-6">Nuestros Productos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Producto 1 -->
+             {%if resultado%}
+            {%for res in resultado%}
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="{{url_for('static', filename='telefono.jpg')}}" alt="Pantalla iPhone 12" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <h3 class="font-bold text-xl mb-2">Marca: </span>{{res.marca}}</h3>
+                    <p class="text-gray-700 mb-2"><span class="font-semibold">Modelo:</span> {{res.modelo}}</p>
+                    <p class="text-gray-700 mb-2"><span class="font-semibold">Repuesto:</span> {{res.repuesto}}</p>
+                    <p class="text-green-600 font-bold text-xl">${{res.precio}}</p>
+                </div>
+            </div>
+            {%endfor%}
+            {%else%}
+            <center><h2>{{mensaje}}</h2></center>
+            {%endif%}
+
+        </div>
+    </main>
+
+    <div class=" text-center">
+        <a class="btn btn-primary" href="{{url_for('index')}}"><< Volver >></a>
+    </div>
+
+    <footer class="bg-gray-800 text-white mt-8">
+        <div class="container mx-auto px-4 py-6">
+            <p class="text-center">&copy; 2025 PhoneExpress. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

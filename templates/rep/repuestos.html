@@ -1,0 +1,26 @@
+{%extends 'rep/base.html'%}
+
+{%block content%}
+<div class="container">
+    <center>
+        <div>
+        <h1 class="p-4">{%block title%}Lista de repuestos{%endblock%}</h1>
+    </div>
+        <ul class="container mt-5">
+            {%for rep in repuestos%}
+            <li class="me-3">
+                {{rep.modelo}}   {{rep.marca}}   {{rep.repuesto}}   {{rep.precio}} 
+                <a class="m-2 btn btn-success p-1" href="/v_editar/{{rep.id}}">Editar</a>
+                <a class="btn btn-danger p-1" href="/eliminar_repuesto/{{rep.id}}">Eliminar</a>
+            </li>
+            {%endfor%}
+        </ul>
+    </center>
+</div>
+
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2025 PhoneExpress. Todos los derechos reservados.</p>
+    </div>
+</footer>
+{%endblock%}
